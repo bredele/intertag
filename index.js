@@ -7,7 +7,7 @@ module.exports = (chunks, ...data) => {
     const item = data[i]
     if (typeof item === 'function') {
       const fn = data.splice(i, 1)[0]
-      const results = fn()
+      const results = transform(fn())
       let templates = [...results.shift()]
       const head = templates.shift()
       args.push(tail + chunks[i] + head)
@@ -18,7 +18,7 @@ module.exports = (chunks, ...data) => {
       args.push(chunks[i])
     }
   }
-  if (l === args.length) args.push(tail + chunks[i])
+  if (l === args.length && tail != null) args.push(tail + chunks[i])
   return [args, ...data]
 }
 
@@ -27,4 +27,12 @@ module.exports = (chunks, ...data) => {
 function add (array, chunks) {
   if (chunks[0] === '') chunks.shift()
   array.push(...chunks)
+}
+
+
+function transform (output) {
+  if (output == null) return [['']]
+  else if (output instanceof Array) {
+    return output
+  } else return [['', ''], output]
 }

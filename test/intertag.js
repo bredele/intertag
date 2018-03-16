@@ -34,6 +34,23 @@ test('should work with imbricated interset', assert => {
 })
 
 
+test('should not intersect function returning null or undefined', assert => {
+  assert.plan(1)
+  const falsy = () => null
+  const args = intersect`foo and ${falsy}`
+  assert.deepEqual(args, [['foo and ']])
+})
+
+
+test('final intersect primitives', assert => {
+  assert.plan(1)
+  const boolean = () => true
+  const number = () => 2
+  const args = intersect`foo is ${number} years old ${boolean}`
+  assert.deepEqual(args, [['foo is ', ' years old ', ''], 2, true])
+})
+
+
 /**
  * Tagged templates partial.
  *
