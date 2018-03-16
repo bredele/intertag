@@ -23,8 +23,8 @@ test('should intersect two tagged template', assert => {
 
 test('should intersect more than two tagged template', assert => {
   assert.plan(1)
-  const args = intersect`foo and ${john} and ${john}`
-  assert.deepEqual(args, [['foo and john ', ' and john ', ''], 'doe', 'doe'])
+  const args = intersect`foo and ${john} and ${john} and ${jane}`
+  assert.deepEqual(args, [['foo and john ', ' and john ', ' and ', ' his sister'], 'doe', 'doe', 'jane'])
 })
 
 
