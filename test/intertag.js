@@ -23,8 +23,14 @@ test('should intersect two tagged template', assert => {
 
 test('should intersect more than two tagged template', assert => {
   assert.plan(1)
-  const args = intersect`foo and ${john} and ${john} and ${jane}`
-  assert.deepEqual(args, [['foo and john ', ' and john ', ' and ', ' his sister'], 'doe', 'doe', 'jane'])
+  const args = intersect`${jane} and foo and ${john} and ${john} and ${jane}`
+  assert.deepEqual(args, [['', ' his sister and foo and john ', ' and john ', ' and ', ' his sister'], 'jane', 'doe', 'doe', 'jane'])
+})
+
+test('should work with imbricated interset', assert => {
+  assert.plan(1)
+  const args = intersect`${jane} and foo and ${complex} and ${jane} and ${john}`
+  assert.deepEqual(args, [ [ '', ' his sister and foo and beep and ', ' his sister and boop and ', ' his sister and john ', ''], 'jane', 'jane', 'jane', 'doe'])
 })
 
 
@@ -53,6 +59,10 @@ function jane () {
   return tagged`${who} his sister`
 }
 
+
+function complex () {
+  return intersect`beep and ${jane} and boop`
+}
 
 /**
  * Return tagged template.
