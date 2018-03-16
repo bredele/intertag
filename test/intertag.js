@@ -14,6 +14,13 @@ test('should be a tagged template', assert => {
 })
 
 
+test('should intersect when interpolate function', assert => {
+  assert.plan(1)
+  const args = intersect`foo and ${partial}`
+    assert.deepEqual(args, [['foo and john ', ''], 'doe'])
+})
+
+
 /**
  * Tagged templates partial.
  *
@@ -22,8 +29,8 @@ test('should be a tagged template', assert => {
  */
 
 function partial () {
-  const who = 'world'
-  return tagged`hello ${who}`
+  const who = 'doe'
+  return tagged`john ${who}`
 }
 
 
@@ -34,6 +41,6 @@ function partial () {
  * @api privtate
  */
 
-function tagged () {
-  return argumentws
+function tagged (...args) {
+  return args
 }
