@@ -1,5 +1,6 @@
 # Intertag
 
+  [![Build Status](https://travis-ci.org/bredele/intertag.svg?branch=master)](https://travis-ci.org/bredele/intertag)
   [![NPM](https://img.shields.io/npm/v/intertag.svg)](https://www.npmjs.com/package/intertag)
   [![Downloads](https://img.shields.io/npm/dm/intertag.svg)](http://npm-stat.com/charts.html?package=intertag)
   [![pledge](https://bredele.github.io/contributing-guide/community-pledge.svg)](https://github.com/bredele/contributing-guide/blob/master/guidelines.md)
