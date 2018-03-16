@@ -1,0 +1,27 @@
+{
+  "name": "intertag",
+  "version": "1.0.0",
+  "description": "Intersect tagged template literals",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bredele/intertag.git"
+  },
+  "keywords": [
+    "interset",
+    "tagged",
+    "template"
+  ],
+  "author": "Olivier Wietrich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bredele/intertag/issues"
+  },
+  "homepage": "https://github.com/bredele/intertag#readme"
+}
