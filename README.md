@@ -5,22 +5,22 @@
   [![Downloads](https://img.shields.io/npm/dm/intertag.svg)](http://npm-stat.com/charts.html?package=intertag)
   [![pledge](https://bredele.github.io/contributing-guide/community-pledge.svg)](https://github.com/bredele/contributing-guide/blob/master/guidelines.md)
 
-Intersect functions with ES6 tagged templates.
+Module that allows to compose template literals together using function interpolation. Created for [cypher-async](https://github.com/bredele/cypher-async), intertag allowed to compose multiple database queries together. Use it today to create your own template engine on top of [ES6 template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals). 
 
 ## Usage
 
-Intertag allows the intersection of multiple raw tagged templates. Useful to create custom template engines.
 
 ```js
-const intersect = require('intertag')
-
-intersect`intersect john ${query}`
-// [['intersect john with', ''], 'jane']
+const compose = require('intertag')
 
 function query () {
   const name = 'jane'
   return intersect`with ${name}`
 }
+
+compose`intersect john ${query}`
+// [['intersect john with', ''], 'jane']
+
 ```
 
 
