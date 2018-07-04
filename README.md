@@ -15,11 +15,11 @@ const compose = require('intertag')
 
 function query () {
   const name = 'jane'
-  return intersect`with ${name}`
+  return compose`with ${name}`
 }
 
-compose`intersect john ${query}`
-// [['intersect john with', ''], 'jane']
+compose`marry john ${query}`
+// [['marry john with', ''], 'jane']
 
 ```
 
