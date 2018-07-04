@@ -1,7 +1,7 @@
 {
   "name": "intertag",
-  "version": "1.0.0",
-  "description": "Intersect tagged template literals",
+  "version": "2.0.0",
+  "description": "Compose template literals together using function interpolation",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -14,7 +14,8 @@
     "url": "git+https://github.com/bredele/intertag.git"
   },
   "keywords": [
-    "interset",
+    "compose",
+    "literals",
     "tagged",
     "template"
   ],
@@ -26,5 +27,8 @@
   "homepage": "https://github.com/bredele/intertag#readme",
   "devDependencies": {
     "tape": "^4.9.0"
+  },
+  "dependencies": {
+    "tag-compose": "^1.0.0"
   }
 }
