@@ -1,6 +1,6 @@
 {
   "name": "intertag",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Compose template literals together using function interpolation",
   "main": "index.js",
   "directories": {
@@ -29,6 +29,6 @@
     "tape": "^4.9.0"
   },
   "dependencies": {
-    "tag-compose": "^1.0.0"
+    "tag-compose": "^1.1.0"
   }
 }
